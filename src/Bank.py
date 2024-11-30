@@ -1,7 +1,14 @@
 class BankAccount:
-    def __init__(self,account_holder,amount=0):
+    def __init__(self,account_holder,account_type="Vadesiz",amount=0):
         self.account_holder=account_holder
         self.amount=amount
+        self.account_type=account_type;
+
+    def display_account_info(self):
+        print(f"Hesabın Sahibi: ${self.account_holder}")
+        print(f"Hesabın Türü: ${self.account_type}")
+        print(f"Hesap Bakiyesi: ${self.amount}")
+
 
     def deposit(self, amount):
         if amount > 0:
@@ -21,6 +28,7 @@ class BankAccount:
         print(f"Hesaptaki bakiye: {self.balance} TL")
 
 hesap = BankAccount("Mehmet Yılmaz", 750)
+
 
 # İşlemler
 hesap.check_balance()  # Bakiye kontrol
